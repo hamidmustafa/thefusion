@@ -1,0 +1,43 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1102648 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=10623, tid=1666902848
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b17) (build 1.8.0_66-b17)
+# Java VM: Java HotSpot(TM) Server VM (25.66-b17 mixed mode linux-x86 )
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x63ba5000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=10637, stack(0x6352e000,0x635af000)]
+
+Stack: [0x6352e000,0x635af000],  sp=0x635ac3d0,  free space=504k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x8cd0ff]  VMError::report_and_die()+0x16f
+V  [libjvm.so+0x38bee5]  report_vm_out_of_memory(char const*, int, unsigned int, VMErrorType, char const*)+0x55
+V  [libjvm.so+0x1acd04]  Chunk::operator new(unsigned int, AllocFailStrategy::AllocFailEnum, unsigned int)+0xe4
+V  [libjvm.so+0x1ad28c]  Arena::grow(unsigned int, AllocFailStrategy::AllocFailEnum)+0x2c
+V  [libjvm.so+0x4ba352]  PhaseIFG::init(unsigned int)+0x1c2
+V  [libjvm.so+0x2ae40a]  PhaseChaitin::Register_Allocate()+0x78a
+V  [libjvm.so+0x3385c1]  Compile::Code_Gen()+0x251
+V  [libjvm.so+0x33d47f]  Compile::Compile(ciEnv*, C2Compiler*, ciMethod*, int, bool, bool, bool)+0x12ef
+V  [libjvm.so+0x293734]  C2Compiler::compile_method(ciEnv*, ciMethod*, int)+0x1b4
+V  [libjvm.so+0x347b91]  CompileBroker::invoke_compiler_on_method(CompileTask*)+0xda1
+V  [libjvm.so+0x3489a7]  CompileBroker::compiler_thread_loop()+0x567
+V  [libjvm.so+0x876618]  compiler_thread_entry(JavaThread*, Thread*)+0x18
+V  [libjvm.so+0x880b89]

@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="thefusion.thefusion.MainActivity_TheFusion">
+
+    <item android:id="@+id/action_delete_levels" android:title="Delete all levels"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_longerpress" android:title="'Longer press levels to delete'"
+        android:orderInCategory="100" app:showAsAction="never" />
+
+</menu>

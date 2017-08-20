@@ -1,0 +1,37 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1203016 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=10572, tid=1666571072
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_66-b17) (build 1.8.0_66-b17)
+# Java VM: Java HotSpot(TM) Server VM (25.66-b17 mixed mode linux-x86 )
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x63aa5000):  JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=10590, stack(0x634dd000,0x6355e000)]
+
+Stack: [0x634dd000,0x6355e000],  sp=0x6355b280,  free space=504k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x8cd0ff]  VMError::report_and_die()+0x16f
+V  [libjvm.so+0x38bee5]  report_vm_out_of_memory(char const*, int, unsigned int, VMErrorType, char const*)+0x55
+V  [libjvm.so+0x1acd04]  Chunk::operator new(unsigned int, AllocFailStrategy::AllocFailEnum, unsigned int)+0xe4
+V  [libjvm.so+0x1ad28c]  Arena::grow(unsigned int, AllocFailStrategy::AllocFailEnum)+0x2c
+V  [libjvm.so+0x7cf894]  resource_allocate_bytes(unsigned int, AllocFailStrategy::AllocFailEnum)+0x64
+V  [libjvm.so+0x402e6e]  PhaseIdealLoop::Dominators()+0x6e
+V  [libjvm.so+0x67491e]
